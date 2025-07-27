@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SGIP Eligibility Calculator</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKI-mieU9BWhgNyQleYgDHHXxlNVRK_XU&libraries=places"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>California SGIP Eligibility Calculator</h1>
+    <form id="calcForm">
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required/>
+
+      <label for="county">County:</label>
+      <select id="county" name="county"></select>
+
+      <label for="hhSize">Household Size:</label>
+      <input type="number" id="hhSize" name="hhSize" min="1" value="4"/>
+
+      <label for="hhIncome">Annual Income:</label>
+      <input type="number" id="hhIncome" name="hhIncome" step="1000"/>
+
+      <label for="custType">Customer Type:</label>
+      <select id="custType" name="custType">
+        <option value="single">Single Family</option>
+        <option value="multi">Multifamily</option>
+        <option value="nonres">Non-residential</option>
+      </select>
+
+      <label for="dacFlag">DAC?</label>
+      <select id="dacFlag" name="dacFlag"><option value="no">No</option><option value="yes">Yes</option></select>
+
+      <label for="pspsFlag">PSPS?</label>
+      <select id="pspsFlag" name="pspsFlag"><option value="no">No</option><option value="yes">Yes</option></select>
+
+      <label for="critFlag">Medical Baseline / Well Pump?</label>
+      <select id="critFlag" name="critFlag"><option value="no">No</option><option value="yes">Yes</option></select>
+
+      <button type="submit">Calculate</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
